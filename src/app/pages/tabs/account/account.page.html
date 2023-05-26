@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar color='primary'>
+    <ion-title>My Account</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="logout()">
+        <ion-icon name="power-outline"  slot="icon-only"></ion-icon>
+        <!-- color="white" -->
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-avatar> -->
+    <div class="icon">
+    <ion-img src="assets/imgs/03.jpeg"></ion-img>
+    </div>
+
+  <!-- </ion-avatar> -->
+
+
+  <ng-container *ngIf="!isLoading">
+    <ion-list>
+      <ion-item lines="full" > <!--[routerLink]="['/', 'tabs', 'addresses']"   -->
+        <ion-label>
+          <ion-text class="ion-text-uppercase"><h4>{{profile?.name}}</h4></ion-text>
+          <p>{{profile?.email}}</p>
+        </ion-label>
+        <!-- <ion-button slot="end" fill="clear">EDIT</ion-button> -->
+      </ion-item>
+      <!-- <ion-item lines="full"  [routerLink]="['/', 'tabs', 'addresses']">
+        <ion-icon name="home-outline" slot="start" color="dark"></ion-icon>
+        <h5>Font</h5>
+        <h6 slot="end">{{profile?.font}}</h6>
+      </ion-item> -->
+      <!-- <ion-item lines="full" [routerLink]="['/', 'tabs', 'addresses']">
+        <ion-icon name="home-outline" slot="start" color="dark"></ion-icon>
+        <h5>Color</h5>
+        <h6 slot="end">{{profile?.theme}}</h6>
+      </ion-item> -->
+
+      <ion-item>
+        <ion-icon name="home-outline" slot="start" color="dark"></ion-icon>
+        <h5>Color</h5>
+        <ion-select
+           interface="popover"
+          [(ngModel)]='default_color'
+          (ngModelChange)="changeInColorSelection()"
+          slot="end">
+          <ion-select-option *ngFor="let color of colors" [value]="color">{{color}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="home-outline" slot="start" color="dark"></ion-icon>
+        <h5>Font</h5>
+        <ion-select
+          interface="popover"
+          [(ngModel)]="default_fonts"
+          slot="end"
+          (ngModelChange)="changeInFontSelection()"
+          >
+          <ion-select-option *ngFor="let font of fonts" [value]="font">{{font}}</ion-select-option>
+        </ion-select>
+        <!-- <ion-select interface="popover" placeholder="Select One" [(ngModel)]="myKey" >
+          <ion-select-option value="brown" >Brown</ion-select-option>
+          <ion-select-option value="blonde">Blonde</ion-select-option>
+          <ion-select-option value="black">Black</ion-select-option>
+          <ion-select-option value="red">Red</ion-select-option>
+        </ion-select> -->
+      </ion-item>
+
+
+     
+    </ion-list>
+    <!-- ngModel -->
+    <!-- (ionChange)="changeRestaurant($event)" -->
+    <!-- [(ngModel)]="name" -->
+
+
+    <!-- <ion-list>
+      <ion-list-header>
+        <ion-label color='primary'>PAST ORDERS</ion-label>
+      </ion-list-header>
+      <ion-text class="ion-text-center" *ngIf="!orders || orders?.length == 0">
+        <p>No Orders Placed Yet</p>
+      </ion-text>
+     <app-orders 
+     *ngFor="let order of orders" 
+     [order]="order"
+     (recorder)="recorder($event)"
+     (help)="getHelp($event)"></app-orders>
+    </ion-list> -->
+  </ng-container>
+  
+
+</ion-content>

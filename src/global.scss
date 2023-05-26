@@ -1,0 +1,58 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+
+@font-face {   
+font-family: 'Varela';    //This is what we are going to call
+src: url('./assets/font/Varela-Regular.ttf');
+}
+
+@font-face {   
+font-family: 'GrapeNuts';    //This is what we are going to call
+src: url('./assets/font/GrapeNuts-Regular.ttf');
+}
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+// $font: 'Varela';
+
+// ion-label,ion-title, ion-button, ion-input,h4,h5,h6, p, ion-select{
+//     font-family:$font !important;
+//   }
+
+
+  // @mixin rule($key, $value, $prefix) {
+  //   #{$prefix}-#{$key}: $value;
+  // }
+
+  // @mixin map-to-string($map, $prefix) {
+  //   @each $key, $value in $map {
+  //     @include rule($key, $value, $prefix);
+  //   }
+  // }
+  
+  // :export {  
+  //   @include map-to-string($font, "font");
+  // }
+

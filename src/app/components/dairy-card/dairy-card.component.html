@@ -1,0 +1,45 @@
+<!-- <div class="wrapper">
+  <div class="column">
+    <ion-icon name="trash-outline" color="light" class="ion-margin-start" #trash></ion-icon>
+  </div>
+  <div class="column ion-text-right">
+    <ion-icon name="archive-outline" color="light" class="ion-margin-end" #archive>
+    </ion-icon>
+  </div>
+</div> -->
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>{{memo.date}}</ion-card-subtitle>
+    <ion-card-title>{{memo.title}}</ion-card-title>
+  </ion-card-header>
+  <div class="leftMargin">
+    <ion-chip *ngFor="let feel of memo.feeling">
+      <ion-label>{{feel}}</ion-label>
+    </ion-chip>
+  </div>
+  
+  <ion-card-content>
+    <p>{{memo.content}}</p>
+    <!-- <ion-buttons> -->
+      <!-- <ion-button>Edit</ion-button>
+      <ion-button>Delete</ion-button>
+      <button ion-button full>Full Button</button>
+      <button ion-button color="dark" round>Dark Round</button> -->
+      <div class="topMargin">
+      <ion-button type="button" size="small" (click)="editing()" color="primary">Edit</ion-button>
+      <ion-button type="button" size="small" (click)="deleting()" color="danger">Delete</ion-button>
+      </div>
+    <!-- </ion-buttons> -->
+  </ion-card-content>
+
+  
+  
+</ion-card>
+
+
+
+  <!-- <ion-item>
+    <ion-label>Item Options</ion-label>
+  </ion-item> -->
+

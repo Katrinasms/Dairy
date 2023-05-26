@@ -1,0 +1,6 @@
+{
+	"appId": "com.tech.Diary",
+	"appName": "Diary",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

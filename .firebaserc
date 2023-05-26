@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "fyos-7eb35"
+  },
+  "targets": {
+    "fyos-7eb35": {
+      "hosting": {
+        "app": [
+          "fyos-7eb35"
+        ]
+      }
+    }
+  }
+}

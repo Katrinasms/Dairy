@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar color='primary'>
+    <ion-title>Add Diary</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- <form #f1="ngForm" (ngSubmit)="onSubmit(f1)"> -->
+  <form [formGroup]="form">
+    <!-- <ion-list lines="none"> -->
+    <ion-list>
+
+      <ion-list-header>
+        <ion-label>{{dateTime}}</ion-label>
+      </ion-list-header>
+
+    <!-- <ion-item lines="none">
+          <ion-label>{{memos?.title}}</ion-label>
+    </ion-item>
+    <ion-row>
+      <ion-note class="ion-text-wrap ion-padding-horizontal">
+        {{memos?.content}}
+      </ion-note>
+    </ion-row>
+    <div class="leftMargin">
+      <ion-chip *ngFor="let feel of memos?.feeling">
+        <ion-label>{{feel}}</ion-label>
+      </ion-chip>
+    </div> -->
+
+    <ion-item-group class="ion-padding">
+
+      
+      
+       <ion-item color="light" class="ion-margin-bottom">
+        <!-- <ion-input
+          type="text"
+          name="name"
+          ngModel
+          #name="ngModel"
+          placeholder="Few words to summarize your day :)"
+          required>
+        </ion-input> -->
+        <ion-input 
+        type="text" 
+        autocomplete 
+        autocorrect 
+        placeholder="Few words to summarize your day :)"
+        formControlName="title"
+        ></ion-input>
+      </ion-item>
+   
+      <!-- <ion-input type="text" autocomplete autocorrect formControlName="landmark"></ion-input> -->
+
+      <ion-item color="light" class="ion-margin-bottom">
+        <!-- <ion-textarea
+          type="text"
+          name="description"
+          ngModel
+          #description="ngModel"
+          placeholder="Tell us more...">
+        </ion-textarea> -->
+        <ion-textarea
+          type="text"
+          autocomplete 
+          autocorrect 
+          formControlName="content"
+          placeholder="Tell us more...">
+        </ion-textarea>
+
+      </ion-item> 
+
+      <ion-item color="light">
+        <ion-input 
+          formControlName="feeling" 
+          [(ngModel)]="feeling" 
+          placeholder="Enter Your Feeling" 
+          type="text"></ion-input>
+      </ion-item>
+      <ion-button type="button" size="small" (click)="addCategory()" color="primary">ADD</ion-button>
+      <ion-button type="button" size="small" (click)="clearCategory()" color="danger">CLEAR</ion-button>
+      <p *ngIf="feelings?.length > 0">Feeling with: {{getArrayAsString(feelings)}}</p>      
+
+      <ion-button 
+      *ngIf="!isLoading" 
+      [disabled]="!form.valid"
+      expand="block" 
+      shape="round" 
+      type="submit" 
+      color="primary"
+      (click)="onSubmit()">
+      Save
+      </ion-button>
+
+    <div class="ion-text-center" *ngIf="isLoading">
+      <ion-button 
+        shape="round" 
+        color="primary" 
+        [disabled]="!form.valid">
+        <ion-spinner name="circles"></ion-spinner>
+      </ion-button>
+    </div>
+    </ion-item-group>
+    </ion-list>
+  
+  </form>
+  
+
+</ion-content>
