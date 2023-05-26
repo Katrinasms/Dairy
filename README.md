@@ -1,6 +1,5 @@
 # Diary App 
 https://play.google.com/store/apps/details?id=com.tech.Diary
-![PenguinTravelWebPage](screenshot/coverImg.png)
 Diary App is a user-centric diary application that provides a secure and personalized journaling experience. The app is available on the Google Play Store.
 
 ## Description
