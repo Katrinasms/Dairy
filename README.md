@@ -14,6 +14,7 @@ Secure: With personal emotion recording functionality, Diary App demonstrates a 
 ## Installation
 Visit the Google Play Store and search for "Diary" or visit the below link:
 https://play.google.com/store/apps/details?id=com.tech.Diary
+
 Click on the "Install" button.
 Open the app and register for an account or log in if you already have an account.
 
